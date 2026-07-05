@@ -1,6 +1,6 @@
-# Google Health API Extractor (shared study device)
+# Google Health API Extractor (for a shared device)
 
-Pulls Fitbit sleep/activity data via the Google Health API for a sleep study using **one shared physical Fitbit and one Google Health account**, handed to a different participant each week/session. 
+Pulls Fitbit sleep/activity data via the Google Health API for a study using **one shared physical Fitbit and one Google Health account**, handed to a different participant each week/session. 
 
 Data is attributed to participants by date range (see `config/schedule.csv`), not by account — there's only ever one account.
 
