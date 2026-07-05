@@ -6,13 +6,15 @@ Data is attributed to participants by date range (see `config/schedule.csv`), no
 
 ## Setup
 
-1. Get access to the shared credentials (ask whoever set this up).
+1. Fork this repo to create a private repo.
+
+2. Get access to the shared credentials (ask whoever set this up).
    - `config/google_health_client.json` — OAuth Client ID/Secret
    - `config/tokens/google_health_shared.json` — the live token (gets generate after the first-run, which needs browser authentication)
 
    Neither are in this repo — they're gitignored. **Never commit to this public repo.**
 
-2. Update the `config/schedule.csv` to track the start and end dates of each participant's sleep session.
+3. Update the `config/schedule.csv` to track the start and end dates of each participant's sleep session.
 
 *Example*
    ```csv
@@ -23,7 +25,7 @@ Data is attributed to participants by date range (see `config/schedule.csv`), no
    Dates are inclusive, `YYYY-MM-DD`. Must keep periods non-overlapping.
    Assumes one study session will be overnight, so one participant per date period.
 
-3. Ensure you have a virtual environment to run the script inside.
+4. Establish a virtual environment to run the script inside.
 
 *Conda env*
 ```shell
@@ -64,13 +66,13 @@ output/<participant_id>_<start_date>_<end_date>/distance.csv
 output/<participant_id>_<start_date>_<end_date>/profile.csv
 ```
 
-Nested JSON fields are flattened into dotted columns (e.g. `profile.name`, `profile.address.city`). `output/` is the particpant data and will be gitignored — **Never commit to this public repo.**
-If you want to keep the data and share it across Github, fork the repo and make that a private repo.
+Nested JSON fields are flattened into dotted columns (e.g. `profile.name`, `profile.address.city`). 
+After running this script, `output/` will be where the raw participant data.
 
 
 ## Notes
  
-### How to add more scopes (pull more variables)
+### How to add more variables
  
 The script only pulls the data types listed in `DATA_TYPES`, and each data
 type requires a matching scope in `SCOPES`. To pull more variables:
@@ -105,7 +107,7 @@ Full list of Google Health scopes available on this project:
 If either is needed: add `ecg.readonly` / `irn.readonly` to `SCOPES` and `electrocardiogram` / `irregular-rhythm-notification` to `DATA_TYPES` (the confirmed endpoint identifiers from Google's docs).
 
  
-### How to edit OAuth authentication (Google Cloud project: "Fitbit Direct User Dev")
+### How to edit OAuth authentication 
  
 1. Go to [console.cloud.google.com](https://console.cloud.google.com) and confirm **Fitbit Direct User Dev** is the selected project (top-left project picker — easy to accidentally edit the wrong project).
 2. Left sidebar → **APIs & Services** → **Google Auth Platform**.

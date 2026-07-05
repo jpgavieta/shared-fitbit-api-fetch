@@ -1,0 +1,26 @@
+# OAuth client secret — has Client ID + Secret, never commit
+config/google_health_client.json
+
+# OAuth tokens — has live access/refresh tokens for the shared account
+config/tokens/*.json
+
+# but keep the folder structure itself tracked
+!config/tokens/.gitkeep
+
+# Right now, its an example participant schedule — uncomment for the actual study dates/IDs
+# config/schedule.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Output data — real participant health data should not be public
+output/
+
+# REST Client file from manual API testing
+Codelab.http
+
+# OS cruft
+.DS_Store
