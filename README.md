@@ -12,7 +12,7 @@ Data is attributed to participants by date range (see `config/schedule.csv`), no
    - `config/google_health_client.json` — OAuth Client ID/Secret
    - `config/tokens/google_health_shared.json` — the live token (gets generate after the first-run, which needs browser authentication)
 
-   Neither are in this repo — they're gitignored. **Never commit to this public repo.**
+   Neither are in this repo — they're gitignored. **Never commit to a public repo.**
 
 3. Update the `config/schedule.csv` to track the start and end dates of each participant's sleep session.
 
