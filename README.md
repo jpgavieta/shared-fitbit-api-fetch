@@ -93,7 +93,7 @@ Full list of Google Health scopes available on this project:
 | `sleep.readonly` | sleep stages, sleep summary | ✅ |
 | `profile.readonly` | account holder's name/demographic info | ✅ |
 | `irn.readonly` | read below` | no |
-| `ecg.readonly` | read below | not yet |
+| `ecg.readonly` | read below | no |
 | `location.readonly` | GPS coordinates recorded during exercise | no |
 | `nutrition.readonly` | logged food/water entries, calories, macros | no |
  
