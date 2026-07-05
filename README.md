@@ -112,13 +112,16 @@ If either is needed: add `ecg.readonly` / `irn.readonly` to `SCOPES` and `electr
 1. Go to [console.cloud.google.com](https://console.cloud.google.com) and confirm **Fitbit Direct User Dev** is the selected project (top-left project picker — easy to accidentally edit the wrong project).
 2. Left sidebar → **APIs & Services** → **Google Auth Platform**.
 3. Three relevant tabs:
+
    **Audience** 
     - Add/remove *Test users* here (each participant or teammate's Google account must be listed here before they can authorize, since the app isn't published/verified). 
     - Also shows Testing vs Production publishing status, and the 100-test-user cap.
+
     **Data Access** 
     - Add/remove *scopes* here. 
     - Click *"Add or remove scopes"*, check the ones you need and then *Update*.
     - This is separate from editing `SCOPES` in the script — both need to match, or you'll get an error when running the script.
+    
    **Clients**
    - This is where the OAuth *Client ID + Secret* live (what's saved locally as `config/google_health_client.json`)
    - Always confirm the redirect URIs here still list `http://localhost:8765` exactly. But the script does fallback on `http://google.com`
