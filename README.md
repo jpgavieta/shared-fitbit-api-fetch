@@ -125,6 +125,4 @@ If either is needed: add `ecg.readonly` / `irn.readonly` to `SCOPES` and `electr
    **Clients**
    - This is where the OAuth *Client ID + Secret* live (what's saved locally as `config/google_health_client.json`)
    - Always confirm the redirect URIs here still list `http://localhost:8765` exactly. But the script does fallback on `http://google.com`
-
-Notice: The *sensitive* scopes (e.g. `ecg`, `irn`, `health_metrics_and_measurements`) don't require re-verification for a project still in **Testing** mode with test users under the cap — but if this project is ever published into **Production** mode, sensitive/restricted scopes trigger Google's verification review (can take weeks).
  
