@@ -77,7 +77,7 @@ After running this script, `output/` will be where the raw participant data.
 The script only pulls the data types listed in `DATA_TYPES`, and each data
 type requires a matching scope in `SCOPES`. To pull more variables:
  
-1. Add the scope to `SCOPES` in `fitbit_api.py`.
+1. Add the scope to `SCOPES` in `fitbit_api.py` (Note: all `.readonly` scopes are already included).
 2. Add the matching data type identifier to `DATA_TYPES`, which is [available here](https://developers.google.com/health/reference/rest/v4/users.dataTypes.dataPoints)
 3. Delete `config/tokens/google_health_shared.json` and re-run the script —
    this forces a fresh browser consent, since the old token doesn't cover
@@ -106,6 +106,7 @@ Full list of Google Health scopes available on this project:
 
 If either is needed: add `ecg.readonly` / `irn.readonly` to `SCOPES` and `electrocardiogram` / `irregular-rhythm-notification` to `DATA_TYPES` (the confirmed endpoint identifiers from Google's docs).
 
+Additional ref: [tryterra.co/blog/everything-you-need-to-know-about-google-health-api](https://tryterra.co/blog/everything-you-need-to-know-about-google-health-new-api)
  
 ### How to edit OAuth authentication 
  
